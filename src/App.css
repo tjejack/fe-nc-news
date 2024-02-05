@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+#header {
+  font-size: 3em;
+  margin: 10px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+#NC {
+  color: red;
+}
+
+.nav-button {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#navigation-bar {
+  background-color: rgb(116, 5, 5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  padding-inline-start: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article-card {
+  padding: 10px;
+  list-style-type: none;
+  padding-inline-start: 1%;
+  display: inline-block;
+  height: fit-content;
+  width: 90%;
+  list-style-position: inside;
+  border: 1px solid grey;
+}
+
+.article-card-img {
+  width: 200px;
+  float: left;
+  padding-right: 10px;
+}
+
+.article-card-title {
+  display: inline;
+}
+
+.article-card-author {
+  display: inline;
+  line-height: 2.5;
+}
