@@ -14,7 +14,7 @@
 }
 
 #header:active {
-  text-decoration: underline rgb(255, 136, 0);;
+  text-decoration: underline rgb(255, 136, 0);
 }
 
 #NC {
@@ -30,9 +30,9 @@
   font-size: large;
 }
 
-.nav-button:active{
-  color:rgb(255, 136, 0);
-  font-weight:500;
+.nav-button:active {
+  color: rgb(255, 136, 0);
+  font-weight: 500;
   font-size: larger;
 }
 
@@ -115,16 +115,31 @@
   margin-right: 15px;
 }
 
-#article-page-stats{
+#article-page-votes {
   text-align: center;
+  border-bottom: gray dotted;
+  margin-bottom: 10px;
 }
 
-#article-page-votes {
-  display: inline-block;
+#article-votes{
+  font-weight: 600;
+}
+
+#article-page-comment-count {
+  text-align: center;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.article-vote-buttons {
+  margin-bottom: 20px;
+}
+
+.article-like-button {
   margin-right: 10px;
 }
-#article-page-comment-count {
-  display: inline-block;
+
+.article-dislike-button {
   margin-left: 10px;
 }
 
@@ -147,26 +162,26 @@
   border: 2px solid grey;
 }
 
-.comment-author{
+.comment-author {
   border-bottom: 2px solid grey;
   line-height: 2;
 }
 
-.comment-published{
+.comment-published {
   font-size: medium;
   font-style: italic;
   line-height: 2;
 }
 
-.comment-body{
+.comment-body {
   overflow: auto;
   height: 200px;
 }
 
-.comment-votes{
+.comment-votes {
   text-align: center;
 }
 
-.comment-vote-buttons{
+.comment-vote-buttons {
   text-align: center;
 }
