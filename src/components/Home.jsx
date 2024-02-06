@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ArticlesList from "./ArticlesList";
 import Search from "./Search";
 
