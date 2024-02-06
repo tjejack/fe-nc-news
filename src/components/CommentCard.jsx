@@ -8,8 +8,10 @@ export default function CommentCard({ comment }) {
         <p className="comment-published">{displayTime}</p>
         <p className="comment-body">{comment.body}</p>
         <p className="comment-votes">Votes: {comment.votes}</p>
+        <div className="comment-vote-buttons">
         <button className="comment-like-button">Upvote</button>
         <button className="comment-dislike-button">Downvote</button>
+        </div>
       </div>
     </div>
   );
