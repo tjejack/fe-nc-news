@@ -1,21 +1,20 @@
-body {
-  background-color: black;
-  font-family: "Times New Roman", Times, serif;
-}
-
 #header {
   font-size: 3em;
   margin: 10px;
   color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: block;
+  text-align: center;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
 }
 
 #header:hover {
   text-decoration: underline;
+}
+
+#header:active {
+  text-decoration: underline rgb(255, 136, 0);;
 }
 
 #NC {
@@ -23,14 +22,25 @@ body {
 }
 
 .nav-button {
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 3%;
+  margin-right: 3%;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+}
+
+.nav-button:active{
+  color:rgb(255, 136, 0);
+  font-weight:500;
+  font-size: larger;
 }
 
 #navigation-bar {
   background-color: rgb(116, 5, 5);
   padding-top: 10px;
   padding-bottom: 10px;
+  height: 50px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -93,6 +103,7 @@ body {
 #article-page-img {
   display: block;
   width: 90%;
+  max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
@@ -127,19 +138,35 @@ body {
 }
 
 .comment-card {
-  width: 95%;
-  position: relative;
-  border: 2px solid grey;
   border-radius: 10px 10px 10px 10px;
   margin: 5px;
   padding: 5px;
+  width: 250px;
+  height: 400px;
+  position: relative;
+  border: 2px solid grey;
 }
 
 .comment-author{
   border-bottom: 2px solid grey;
+  line-height: 2;
 }
 
 .comment-published{
   font-size: medium;
   font-style: italic;
+  line-height: 2;
+}
+
+.comment-body{
+  overflow: auto;
+  height: 200px;
+}
+
+.comment-votes{
+  text-align: center;
+}
+
+.comment-vote-buttons{
+  text-align: center;
 }
