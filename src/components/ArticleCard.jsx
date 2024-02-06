@@ -10,9 +10,9 @@ export default function ArticleCard({ article }) {
   return (
     <div className="article-card-extra-height">
       <div className="article-card" xs={6} md={6} lg={6}>
-        <img src={article.article_img_url} alt={`article image for ${article.title}`} />
-        <header clasName="article-title">{article.title}</header>
-        <p className="article-author">{article.author}</p>
+        <img className="article-card-img" src={article.article_img_url} alt={`article image for ${article.title}`} />
+        <header className="article-card-title">{article.title}</header>
+        <p className="article-card-author">by {article.author}</p>
           <button className="read-button" onClick={goToArticle}>Read</button>
       </div>
     </div>

@@ -54,20 +54,20 @@ body {
   margin: 5px;
 }
 
-.article-card > img {
+.article-card-img {
   width: 100%;
   height: 50%;
   border-radius: 18px 18px 0 0;
 }
 
-.article-card > header {
+.article-card-title {
   margin-top: 10px;
   padding: 10px;
   font-family: "Times New Roman", Times, serif;
   font-size: large;
 }
 
-.article-author {
+.article-card-author {
   font-weight: 450;
   padding: 10px;
   font-style: italic;
@@ -115,4 +115,31 @@ body {
 #article-page-comment-count {
   display: inline-block;
   margin-left: 10px;
+}
+
+.comments-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 20px;
+  justify-content: center;
+  transition: transform 2s ease;
+}
+
+.comment-card {
+  width: 95%;
+  position: relative;
+  border: 2px solid grey;
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.comment-author{
+  border-bottom: 2px solid grey;
+}
+
+.comment-published{
+  font-size: medium;
+  font-style: italic;
 }
