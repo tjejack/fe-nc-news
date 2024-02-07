@@ -15,6 +15,7 @@ export default function ArticlePage() {
 
   function updateVotes(num) {
     setDisplayVotes((currentCount) => currentCount + num);
+    setIsLikesError(false);
     patchArticleVotes(article_id, num).catch((err) => {
       setDisplayVotes((currentCount) => currentCount - num);
       console.log(err);
