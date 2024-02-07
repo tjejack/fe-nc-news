@@ -100,6 +100,22 @@
   margin: 10px;
 }
 
+#article-page-author {
+  display: block;
+}
+
+#article-author-avatar {
+  max-height: 80px;
+  max-width: 150px;
+  border: 2px solid grey;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#article-page-byline{
+  display: inline-flex;
+}
+
 #article-page-img {
   display: block;
   width: 90%;
@@ -109,6 +125,7 @@
   margin-bottom: 15px;
   border: 2px solid grey;
 }
+
 #article-page-body {
   display: block;
   margin-left: 15px;
@@ -162,9 +179,22 @@
   border: 2px solid grey;
 }
 
+.comment-avatar{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  border: 2px solid gray;
+}
+
 .comment-author {
-  border-bottom: 2px solid grey;
   line-height: 2;
+  display: inline-block;
+}
+
+.comment-author-container{
+  border-bottom: 2px solid grey;
 }
 
 .comment-published {
@@ -175,7 +205,7 @@
 
 .comment-body {
   overflow: auto;
-  height: 200px;
+  height: 180px;
 }
 
 .comment-votes {
@@ -184,4 +214,17 @@
 
 .comment-vote-buttons {
   text-align: center;
+}
+
+#comment-body-label {
+  display: block;
+}
+
+#comment-body{
+  width: 250px;
+  height: 180px;
+}
+
+#comment-form-submit{
+  margin-bottom: 5px;
 }

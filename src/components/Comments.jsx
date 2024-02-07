@@ -6,6 +6,7 @@ import CommentsList from "./CommentsList";
 export default function Comments({ article_id }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [commentView, setCommentView] = useState(false);
+  const [latestUserComment, setLatestUserComment] = useState(null)
   function changeCommentView(commentsBool) {
     const newParams = new URLSearchParams(searchParams);
     newParams.set("show_comments", commentsBool);
@@ -14,7 +15,7 @@ export default function Comments({ article_id }) {
   }
   return (
     <section id="article-comments">
-      <CommentForm />
+      <CommentForm article_id={article_id} setLatestUserComment={setLatestUserComment}/>
       <button
         id="comment-view-button"
         onClick={() => {
@@ -23,7 +24,7 @@ export default function Comments({ article_id }) {
       >
         {commentView ? "Hide" : "Show"} Comments
       </button>
-      {commentView ? <CommentsList article_id={article_id} /> : null}
+      {commentView ? <CommentsList article_id={article_id} latestUserComment={latestUserComment}/> : null}
     </section>
   );
 }
