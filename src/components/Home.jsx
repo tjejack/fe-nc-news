@@ -1,12 +1,13 @@
-import { useState } from "react";
 import ArticlesList from "./ArticlesList";
 import Search from "./Search";
+import { useSearchParams } from "react-router-dom";
 
-export default function Home(){
-    return(
-        <div id="home-page">
-            <Search />
-            <ArticlesList />
-        </div>
-    )
+export default function Home() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  return (
+    <div id="home-page">
+      <Search searchParams={searchParams} setSearchParams={setSearchParams} />
+      <ArticlesList searchParams={searchParams} />
+    </div>
+  );
 }

@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import getArticles from "../../utils/getArticles";
 import ArticleCard from "./ArticleCard";
+import { useParams } from "react-router-dom";
 
-export default function ArticlesList() {
+export default function ArticlesList({searchParams}) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const topic = searchParams.get('topic');
   useEffect(() => {
-    getArticles()
+    getArticles(topic)
       .then((articlesData) => {
         setArticles([...articlesData]);
         setIsLoading(false);
@@ -15,12 +17,12 @@ export default function ArticlesList() {
       .catch((error) => {
         setIsError(true);
       });
-  }, []);
-  if(isLoading){
-    return <p>Loading articles...</p>
+  }, [topic]);
+  if (isLoading) {
+    return <p>Loading articles...</p>;
   }
-  if(isError){
-    return <p>Something went wrong!</p>
+  if (isError) {
+    return <p>Something went wrong!</p>;
   }
   return (
     <section className="articles-list">
