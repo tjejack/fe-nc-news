@@ -272,17 +272,22 @@
 
 .comment-author-container {
   border-bottom: 2px solid grey;
+  text-align: left;
 }
 
 .comment-published {
   font-size: medium;
   font-style: italic;
   line-height: 2;
+  text-align: left;
 }
 
 .comment-body {
   overflow: auto;
   height: 180px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: left;
 }
 
 .comment-votes {
@@ -302,6 +307,68 @@
   height: 180px;
 }
 
+#article-comments{
+  text-align: center;
+}
+
 #comment-form-submit {
   margin-bottom: 5px;
+}
+
+#delete-comment-error-container {
+  width: 240px;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#deleting-comment-container{
+  width: 240px;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-body-short{
+  height: 100px;
+  overflow: auto;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: left;
+}
+
+.deleted-card {
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px;
+  padding: 5px;
+  width: 250px;
+  height: 100px;
+  position: relative;
+  border: 2px solid grey;
+  background-color: black;
+}
+
+.deleted-message{
+  padding-top: 15px;
+  font-weight: 600;
+}
+
+#delete-comment-error-message{
+  background-color: rgb(255, 0, 0);
+  text-wrap: wrap;
+  width: 180px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#deleting-comment-message{
+  background-color: rgb(81, 113, 155);
+  text-wrap: wrap;
+  width: 180px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

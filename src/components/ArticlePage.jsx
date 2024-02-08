@@ -20,7 +20,6 @@ export default function ArticlePage() {
     setIsLikesError(false);
     patchArticleVotes(article_id, num).catch((err) => {
       setDisplayVotes((currentCount) => currentCount - num);
-      console.log(err);
       setIsLikesError(true);
     });
   }

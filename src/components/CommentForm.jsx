@@ -33,7 +33,7 @@ export default function CommentForm({ article_id, setLatestUserComment }) {
     }
   }
   return (
-    <section id="post-comment-form">
+    <section id="comment-form">
       <form onSubmit={handleSubmit}>
         <fieldset>
           <legend id="legend">Post a Comment</legend>
