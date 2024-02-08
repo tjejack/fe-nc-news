@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import postComment from "../../utils/postComment.js";
+import { UserContext } from "../contexts/User.jsx";
 
 export default function CommentForm({ article_id, setLatestUserComment }) {
   const [commentBody, setCommentBody] = useState("");
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isPosted, setIsPosted] = useState(false);
+  const {currentUser} = useContext(UserContext);
   function handleChange(event) {
     setCommentBody(event.target.value);
     setIsError(false);
@@ -13,9 +15,10 @@ export default function CommentForm({ article_id, setLatestUserComment }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsPosted(false);
+    setIsError(false);
     if (commentBody.length !== 0) {
       setIsLoading(true);
-      postComment(article_id, commentBody, "anonymous")
+      postComment(article_id, commentBody, currentUser.username)
         .then((newComment) => {
           setIsLoading(false);
           setIsPosted(true);
