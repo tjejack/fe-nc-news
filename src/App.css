@@ -26,11 +26,11 @@
   height: 50px;
 }
 
-#navigation-bar{
+#navigation-bar {
   display: inline-block;
   height: 50px;
   width: 90%;
-  position:absolute;
+  position: absolute;
   padding-top: 10px;
 }
 
@@ -60,6 +60,26 @@
 
 #current-user-avatar:active {
   border: 2px solid rgb(255, 136, 0);
+}
+
+#search-bar {
+  background-color: black;
+  border-top: 5px solid rgb(33, 37, 41);
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1;
+}
+
+#topic-label {
+  padding-right: 10px;
+}
+
+#topic-query {
+  text-transform: capitalize;
+  background-color: rgb(37, 36, 36);
 }
 
 #login-header {
@@ -307,7 +327,7 @@
   height: 180px;
 }
 
-#article-comments{
+#article-comments {
   text-align: center;
 }
 
@@ -323,7 +343,7 @@
   align-items: center;
 }
 
-#deleting-comment-container{
+#deleting-comment-container {
   width: 240px;
   height: 85px;
   display: flex;
@@ -331,7 +351,7 @@
   align-items: center;
 }
 
-.comment-body-short{
+.comment-body-short {
   height: 100px;
   overflow: auto;
   padding-left: 4px;
@@ -350,12 +370,12 @@
   background-color: black;
 }
 
-.deleted-message{
+.deleted-message {
   padding-top: 15px;
   font-weight: 600;
 }
 
-#delete-comment-error-message{
+#delete-comment-error-message {
   background-color: rgb(255, 0, 0);
   text-wrap: wrap;
   width: 180px;
@@ -364,7 +384,7 @@
   padding-bottom: 10px;
 }
 
-#deleting-comment-message{
+#deleting-comment-message {
   background-color: rgb(81, 113, 155);
   text-wrap: wrap;
   width: 180px;
