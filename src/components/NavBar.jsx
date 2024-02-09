@@ -7,16 +7,22 @@ export default function NavBar() {
   return (
     <div id="nav-holder">
       <div id="navigation-bar">
-        <Link to="/" className="nav-button">
+        <Link to="/" className="nav-button" id="home-nav">
           Home
         </Link>
-        <Link to="/login/" className="nav-button">
-          Change User
-        </Link>
+      {currentUser.username === "anonymous" ? (
+        <p id="navbar-current-username">Browsing Anonymously</p>
+      ) : (
+        <p id="navbar-current-username">{currentUser.username}</p>
+      )}
       </div>
-        <Link to="/login/">
-          <img id="current-user-avatar" src={currentUser.avatar_url} alt={`avatar-for-${currentUser.username}`} />
-        </Link>
+      <Link to="/login/">
+        <img
+          id="current-user-avatar"
+          src={currentUser.avatar_url}
+          alt={`avatar-for-${currentUser.username}`}
+        />
+      </Link>
     </div>
   );
 }

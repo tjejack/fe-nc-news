@@ -29,25 +29,37 @@
 #navigation-bar {
   display: inline-block;
   height: 50px;
-  width: 90%;
+  width: 100%;
   position: absolute;
   padding-top: 10px;
 }
 
 .nav-button {
+  display: inline;
   margin-left: 3%;
   margin-right: 3%;
-  cursor: pointer;
   color: rgb(255, 255, 255);
   font-family: "Times New Roman", Times, serif;
   font-size: large;
   margin-top: 5px;
 }
 
-.nav-button:active {
+#home-nav {
+  cursor: pointer;
+}
+
+#home-nav:active {
   color: rgb(255, 136, 0);
   font-weight: 500;
   font-size: larger;
+}
+
+#navbar-current-username {
+  display: inline;
+  position: absolute;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  right: 55px;
 }
 
 #current-user-avatar {
