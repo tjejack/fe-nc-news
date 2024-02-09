@@ -17,6 +17,16 @@
   height: 50px;
 }
 
+#current-user-avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid gray;
+  background-color: white;
+  float: inline-end;
+  position: relative;
+  z-index: 1;
+}
+
 #navigation-bar {
   display: inline-block;
   height: 50px;
@@ -33,36 +43,13 @@
   font-family: "Times New Roman", Times, serif;
   font-size: large;
   margin-top: 5px;
-}
-
-#home-nav {
   cursor: pointer;
 }
 
-#home-nav:active {
+.nav-button:active {
   color: rgb(255, 136, 0);
   font-weight: 500;
   font-size: larger;
-}
-
-#navbar-current-username {
-  display: inline;
-  position: absolute;
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  right: 55px;
-}
-
-#current-user-avatar {
-  width: 50px;
-  height: 50px;
-  border: 2px solid gray;
-  background-color: white;
-  float: inline-end;
-}
-
-#current-user-avatar:active {
-  border: 2px solid rgb(255, 136, 0);
 }
 
 #search-bar {

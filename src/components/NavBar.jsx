@@ -10,19 +10,13 @@ export default function NavBar() {
         <Link to="/" className="nav-button" id="home-nav">
           Home
         </Link>
-      {currentUser.username === "anonymous" ? (
-        <p id="navbar-current-username">Browsing Anonymously</p>
-      ) : (
-        <p id="navbar-current-username">{currentUser.username}</p>
-      )}
+        <Link to="/login/" className="nav-button">Change User</Link>
       </div>
-      <Link to="/login/">
         <img
           id="current-user-avatar"
           src={currentUser.avatar_url}
-          alt={`avatar-for-${currentUser.username}`}
+          alt={`logged in as ${currentUser.username}`}
         />
-      </Link>
     </div>
   );
 }
