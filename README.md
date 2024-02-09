@@ -2,9 +2,10 @@
 
 Hosted version: https://nc-news-tj-jack.netlify.app/
 
-NC News or Northcoders News is a frontend partner project to the backend NC News API project found below.
+NC News or Northcoders News WebApp is a frontend counterpart to my backend NC News API project found below.
 
 BE repo: https://github.com/tjejack/be-nc-news
+
 BE hosted: https://nc-news-o4bo.onrender.com/api
 
 This project aims to generate a functional web application for a user-centric news website complete with user articles, comments, and a rating system.
@@ -26,8 +27,11 @@ Before working with the repository, you're going to need to install npm to your 
 ```npm install```
 
 To find out more about the packages used, see the documentation below.
+
 React: https://react.dev/
+
 Axios: https://axios-http.com/
+
 Bootstrap: https://react-bootstrap.github.io/
 
 # 3. File Setup
