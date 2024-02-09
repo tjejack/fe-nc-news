@@ -1,6 +1,7 @@
 import SearchOrder from "./SearchOrder.jsx";
 import SearchTopic from "./SearchTopic.jsx";
 import SortSearchBy from "./SortSearchBy.jsx";
+import ArticlesPerPage from "./ArticlesPerPage.jsx";
 
 export default function Search({ searchParams, setSearchParams }) {
   return (
@@ -19,6 +20,8 @@ export default function Search({ searchParams, setSearchParams }) {
           searchParams={searchParams}
           setSearchParams={setSearchParams}
         />
+        <ArticlesPerPage searchParams={searchParams}
+          setSearchParams={setSearchParams}/>
       </fieldset>
     </form>
   );

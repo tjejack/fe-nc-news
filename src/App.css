@@ -99,12 +99,46 @@ button{
   background-color: rgb(37, 36, 36);
 }
 
+#articles-per-page-options {
+  padding-top: 5px;
+}
+
+#articles-per-page-label {
+  padding-right: 10px;
+}
+
+#articles-per-page {
+  background-color: rgb(37, 36, 36);
+}
+
 #desc-label {
   padding-left: 10px;
   padding-right: 5px;
 }
 #asc-label {
   padding-right: 5px;
+}
+
+#articles-list-navigation {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10px;
+}
+
+#articles-list-nav-buttons-container {
+  width: fit-content;
+  height: 50px;
+  border: 5px double grey;
+  text-align: center;
+  text-justify: distribute;
+}
+
+.articles-list-nav-button {
+  background-color: rgb(37, 36, 36);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 #login-header {
@@ -212,6 +246,7 @@ button{
   top: 90%;
   left: 30%;
   right: 30%;
+  background-color: rgb(37, 36, 36);
 }
 
 #article-page {
@@ -275,10 +310,12 @@ button{
 
 .article-like-button {
   margin-right: 10px;
+  background-color: rgb(37, 36, 36);
 }
 
 .article-dislike-button {
   margin-left: 10px;
+  background-color: rgb(37, 36, 36);
 }
 
 .comments-list {
@@ -357,6 +394,10 @@ button{
   text-align: center;
 }
 
+#comment-view-button {
+  background-color: rgb(37, 36, 36);
+}
+
 #post-comment-error {
   padding-bottom: 5px;
   background-color: rgb(175, 0, 0);
@@ -366,6 +407,7 @@ button{
 
 #comment-form-submit {
   margin-bottom: 5px;
+  background-color: rgb(37, 36, 36);
 }
 
 #delete-comment-error-container {
@@ -390,6 +432,14 @@ button{
   padding-left: 4px;
   padding-right: 4px;
   text-align: left;
+}
+
+.comment-like-button{
+  background-color: rgb(37, 36, 36);
+}
+
+.comment-dislike-button{
+  background-color: rgb(37, 36, 36);
 }
 
 .deleted-card {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function getArticles(topicQuery, sortByQuery, orderQuery) {
+export default function getArticles(topicQuery, sortByQuery, orderQuery, limitQuery, pageQuery) {
   let queriesString = "";
   const queriesArray = [];
   if (topicQuery !== null) {
@@ -12,6 +12,12 @@ export default function getArticles(topicQuery, sortByQuery, orderQuery) {
   if(orderQuery !== null){
     queriesArray.push(`order=${orderQuery}`)
   }
+  if(limitQuery !== null){
+    queriesArray.push(`limit=${limitQuery}`)
+  }
+  if(pageQuery !== null){
+    queriesArray.push(`p=${pageQuery}`)
+  }
   if (queriesArray.length > 0) {
     const allQueries = queriesArray.join('&&');
     queriesString += "?";
@@ -20,6 +26,6 @@ export default function getArticles(topicQuery, sortByQuery, orderQuery) {
   return axios
     .get(`https://nc-news-o4bo.onrender.com/api/articles/${queriesString}`)
     .then(({ data }) => {
-      return data.articles;
+      return data;
     });
 }

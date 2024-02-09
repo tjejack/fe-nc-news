@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div id="home-page">
       <Search searchParams={searchParams} setSearchParams={setSearchParams} />
-      <ArticlesList searchParams={searchParams} />
+      <ArticlesList searchParams={searchParams} setSearchParams={setSearchParams}/>
     </div>
   );
 }

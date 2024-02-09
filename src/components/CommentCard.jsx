@@ -3,13 +3,16 @@ import getUserByUsername from "../../utils/getUserByUsername.js";
 import { UserContext } from "../contexts/User.jsx";
 import { useContext } from "react";
 import deleteComment from "../../utils/deleteComment.js";
+import patchCommentVotes from "../../utils/patchCommentVotes copy.js";
 
 export default function CommentCard({ comment }) {
   const { currentUser } = useContext(UserContext);
   const [commentUser, setCommentUser] = useState({});
   const [isError, setIsError] = useState(false);
+  const [isLikesError, setIsLikesError] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [displayVotes, setDisplayVotes] = useState(comment.votes);
   const published = new Date(comment.created_at);
   const displayTime = published.toUTCString();
 
@@ -25,6 +28,16 @@ export default function CommentCard({ comment }) {
         setIsLoading(false);
       });
   }
+
+  function updateVote(num){
+    setDisplayVotes((currentCount) => currentCount + num);
+    setIsLikesError(false);
+    patchCommentVotes(comment.comment_id, num).catch((err)=>{
+      setIsLikesError(true);
+      setDisplayVotes((currentCount) => currentCount - num);
+    })
+  }
+
   useEffect(() => {
     setIsError(false);
     getUserByUsername(comment.author).then((commentAuthorAccount) => {
@@ -52,7 +65,14 @@ export default function CommentCard({ comment }) {
         ) : (
           <p className="comment-body">{comment.body}</p>
         )}
-        <p className="comment-votes">Votes: {comment.votes}</p>
+        <p className="comment-votes">Votes: {displayVotes}</p>
+        {isLikesError ? (
+            <div id="comment-likes-error-container" role="alert">
+              <p id="comment-likes-error-message">
+              Oops! Your vote could not be counted.
+              </p>
+            </div>
+          ) : null}
         {isError ? (
           <div id="delete-comment-error-container" role="alert">
             <p id="delete-comment-error-message">
@@ -73,8 +93,9 @@ export default function CommentCard({ comment }) {
           </button>
         ) : (
           <div className="comment-vote-buttons">
-            <button className="comment-like-button">Upvote</button>
-            <button className="comment-dislike-button">Downvote</button>
+            <button className="comment-like-button" value={1} onClick={()=>{updateVote(1)}}>Upvote</button>
+            <button 
+            className="comment-dislike-button" value={-1} onClick={()=>{updateVote(1)}}>Downvote</button>
           </div>
         )}
       </div>
