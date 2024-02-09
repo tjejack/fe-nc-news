@@ -52,6 +52,10 @@
   font-size: larger;
 }
 
+button{
+  background-color: rgb(33, 37, 41)
+}
+
 #search-bar {
   background-color: black;
   border-top: 3px solid rgb(33, 37, 41);
@@ -355,7 +359,7 @@
 
 #post-comment-error {
   padding-bottom: 5px;
-  background-color: red;
+  background-color: rgb(175, 0, 0);
   padding: 5px 5px 5px 5px;
   margin-bottom: 8px;
 }
@@ -405,7 +409,7 @@
 }
 
 #delete-comment-error-message {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(175, 0, 0);;
   text-wrap: wrap;
   width: 180px;
   text-align: center;

@@ -43,7 +43,7 @@ export default function CommentCard({ comment }) {
     <div className="comment-card-extra-height">
       <div className="comment-card" xs={6} md={6} lg={6}>
         <div className="comment-author-container">
-          <img className="comment-avatar" src={commentUser.avatar_url} />
+          <img className="comment-avatar" src={commentUser.avatar_url} alt={`avatar for ${commentUser.username}`}/>
           <header className="comment-author">{commentUser.name}</header>
         </div>
         <p className="comment-published">{displayTime}</p>
