@@ -4,17 +4,8 @@
   color: rgb(255, 255, 255);
   display: block;
   text-align: center;
-  cursor: pointer;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-}
-
-#header:hover {
-  text-decoration: underline;
-}
-
-#header:active {
-  text-decoration: underline rgb(255, 136, 0);
 }
 
 #NC {
