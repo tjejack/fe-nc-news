@@ -5,6 +5,7 @@ export default function SearchTopic({ searchParams, setSearchParams }) {
   const [topics, setTopics] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const currentTopic = searchParams.get('topic');
   function changeTopic(e) {
     const newParams = new URLSearchParams(searchParams);
     if (e.target.value.length > 0) {
@@ -53,7 +54,7 @@ export default function SearchTopic({ searchParams, setSearchParams }) {
       <label id="topic-label" htmlFor="topic-query">
         By topic:
       </label>
-      <select onChange={changeTopic} id="topic-query" name="topic-query">
+      <select onChange={changeTopic} id="topic-query" name="topic-query" defaultValue={currentTopic}>
         <option key="all-topics" value=""></option>
         {topics.map((topic) => {
           return (
