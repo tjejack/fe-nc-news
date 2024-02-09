@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Comments from "./Comments.jsx"
+import Comments from "./Comments.jsx";
 import getArticleByArticleId from "../../utils/getArticleByArticleId";
 import patchArticleVotes from "../../utils/patchArticleVotes";
 import getUserByUsername from "../../utils/getUserByUsername";
+import NotFound from "./NotFound.jsx";
 
 export default function ArticlePage() {
   const { article_id } = useParams();
@@ -13,6 +14,7 @@ export default function ArticlePage() {
   const [isError, setIsError] = useState(false);
   const [isLikesError, setIsLikesError] = useState(false);
   const [timeOfPublication, setTimeOfPublication] = useState("");
+  const [is404, setIs404] = useState(false);
   const [displayVotes, setDisplayVotes] = useState(0);
 
   function updateVotes(num) {
@@ -25,6 +27,9 @@ export default function ArticlePage() {
   }
 
   useEffect(() => {
+    setIsError(false);
+    setIsLoading(true);
+    setIs404(false);
     getArticleByArticleId(article_id)
       .then((articleById) => {
         setArticle({ ...articleById });
@@ -32,27 +37,36 @@ export default function ArticlePage() {
         setTimeOfPublication(published.toUTCString());
         setDisplayVotes(articleById.votes);
         setIsLoading(false);
-        return getUserByUsername({...articleById}.author)
-        }).then((userData)=>{
-          setArticleAuthor({...userData})
-        })
-      .catch((err) => {
-        setIsError(true);
+        return getUserByUsername({ ...articleById }.author);
       })
-    },[]);
+      .then((userData) => {
+        setArticleAuthor({ ...userData });
+      })
+      .catch((err) => {
+        if (err.response.status === 404) {
+          setIs404(true);
+        } else {
+          setIsError(true);
+        }
+        setIsLoading(false);
+      });
+  }, []);
   if (isLoading) {
     return <p>Loading article...</p>;
   }
   if (isError) {
     return <p>Something went wrong!</p>;
   }
+  if (is404) {
+    return <NotFound message={"We seem to have misplaced the article you're looking for."}/>;
+  }
   return (
     <section id="article-page">
       <div id="article">
         <h2 id="article-page-title">{article.title}</h2>
         <div id="article-page-author">
-        <img id="article-author-avatar" src={articleAuthor.avatar_url}/>
-        <p id="article-page-byline">by {articleAuthor.name}</p>
+          <img id="article-author-avatar" src={articleAuthor.avatar_url} />
+          <p id="article-page-byline">by {articleAuthor.name}</p>
         </div>
         <p id="article-page-time-published">{timeOfPublication}</p>
         <img

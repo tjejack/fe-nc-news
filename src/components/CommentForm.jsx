@@ -53,9 +53,8 @@ export default function CommentForm({ article_id, setLatestUserComment }) {
             </div>
           ) : null}
           {isError ? (
-            <div id="comment-error" role="alert">
-              Your comment could not be posted at this time. Please make sure
-              you are logged in and your comment is not blank.
+            <div id="post-comment-error" role="alert">
+              Your comment could not be posted at this time. We appreciate brevity but please make sure your comment is not blank.
             </div>
           ) : null}
           {isPosted ? (
