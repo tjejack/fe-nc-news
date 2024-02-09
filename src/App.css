@@ -73,7 +73,7 @@
   line-height: 1;
 }
 
-#search-heading{
+#search-heading {
   margin-bottom: 6px;
   font-weight: 600;
 }
@@ -94,7 +94,6 @@
 #sort-by-controls {
   padding-bottom: 5px;
 }
-
 
 #sort-by-label {
   padding-right: 10px;
@@ -344,8 +343,7 @@
 .comment-votes {
   text-align: center;
 }
-
-.comment-vote-buttons {
+% .comment-vote-buttons {
   text-align: center;
 }
 
@@ -360,6 +358,13 @@
 
 #article-comments {
   text-align: center;
+}
+
+#post-comment-error {
+  padding-bottom: 5px;
+  background-color: red;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 8px;
 }
 
 #comment-form-submit {
@@ -422,4 +427,10 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+#error-404 {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  padding-top: 10px;
 }
