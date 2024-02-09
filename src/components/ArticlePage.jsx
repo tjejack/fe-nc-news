@@ -65,7 +65,7 @@ export default function ArticlePage() {
       <div id="article">
         <h2 id="article-page-title">{article.title}</h2>
         <div id="article-page-author">
-          <img id="article-author-avatar" src={articleAuthor.avatar_url} />
+          <img id="article-author-avatar" src={articleAuthor.avatar_url} alt={`avatar for ${articleAuthor.username}`}/>
           <p id="article-page-byline">by {articleAuthor.name}</p>
         </div>
         <p id="article-page-time-published">{timeOfPublication}</p>

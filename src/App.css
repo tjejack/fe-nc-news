@@ -4,17 +4,8 @@
   color: rgb(255, 255, 255);
   display: block;
   text-align: center;
-  cursor: pointer;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-}
-
-#header:hover {
-  text-decoration: underline;
-}
-
-#header:active {
-  text-decoration: underline rgb(255, 136, 0);
 }
 
 #NC {
@@ -26,40 +17,39 @@
   height: 50px;
 }
 
-#navigation-bar {
-  display: inline-block;
-  height: 50px;
-  width: 90%;
-  position: absolute;
-  padding-top: 10px;
-}
-
-.nav-button {
-  margin-left: 3%;
-  margin-right: 3%;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-family: "Times New Roman", Times, serif;
-  font-size: large;
-  margin-top: 5px;
-}
-
-.nav-button:active {
-  color: rgb(255, 136, 0);
-  font-weight: 500;
-  font-size: larger;
-}
-
 #current-user-avatar {
   width: 50px;
   height: 50px;
   border: 2px solid gray;
   background-color: white;
   float: inline-end;
+  position: relative;
+  z-index: 1;
 }
 
-#current-user-avatar:active {
-  border: 2px solid rgb(255, 136, 0);
+#navigation-bar {
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  padding-top: 10px;
+}
+
+.nav-button {
+  display: inline;
+  margin-left: 3%;
+  margin-right: 3%;
+  color: rgb(255, 255, 255);
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.nav-button:active {
+  color: rgb(255, 136, 0);
+  font-weight: 500;
+  font-size: larger;
 }
 
 #search-bar {
@@ -76,6 +66,7 @@
 #search-heading {
   margin-bottom: 6px;
   font-weight: 600;
+  font-size: xx-large;
 }
 
 #topic-controls {

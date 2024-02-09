@@ -7,16 +7,16 @@ export default function NavBar() {
   return (
     <div id="nav-holder">
       <div id="navigation-bar">
-        <Link to="/" className="nav-button">
+        <Link to="/" className="nav-button" id="home-nav">
           Home
         </Link>
-        <Link to="/login/" className="nav-button">
-          Change User
-        </Link>
+        <Link to="/login/" className="nav-button">Change User</Link>
       </div>
-        <Link to="/login/">
-          <img id="current-user-avatar" src={currentUser.avatar_url} />
-        </Link>
+        <img
+          id="current-user-avatar"
+          src={currentUser.avatar_url}
+          alt={`logged in as ${currentUser.username}`}
+        />
     </div>
   );
 }
