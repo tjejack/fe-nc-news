@@ -15,7 +15,7 @@ export default function NavBar() {
         </Link>
       </div>
         <Link to="/login/">
-          <img id="current-user-avatar" src={currentUser.avatar_url} />
+          <img id="current-user-avatar" src={currentUser.avatar_url} alt={`avatar-for-${currentUser.username}`} />
         </Link>
     </div>
   );
