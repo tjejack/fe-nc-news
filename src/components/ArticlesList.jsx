@@ -8,8 +8,11 @@ export default function ArticlesList({searchParams}) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const topic = searchParams.get('topic');
+  const sort_by = searchParams.get('sort_by');
+  const order = searchParams.get('order');
   useEffect(() => {
-    getArticles(topic)
+    setIsError(false);
+    getArticles(topic, sort_by, order)
       .then((articlesData) => {
         setArticles([...articlesData]);
         setIsLoading(false);
@@ -17,7 +20,7 @@ export default function ArticlesList({searchParams}) {
       .catch((error) => {
         setIsError(true);
       });
-  }, [topic]);
+  }, [topic, sort_by, order]);
   if (isLoading) {
     return <p>Loading articles...</p>;
   }
