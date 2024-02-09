@@ -64,13 +64,22 @@
 
 #search-bar {
   background-color: black;
-  border-top: 5px solid rgb(33, 37, 41);
+  border-top: 3px solid rgb(33, 37, 41);
   font-family: "Times New Roman", Times, serif;
   font-size: large;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 1;
+}
+
+#search-heading{
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+#topic-controls {
+  padding-bottom: 5px;
 }
 
 #topic-label {
@@ -80,6 +89,28 @@
 #topic-query {
   text-transform: capitalize;
   background-color: rgb(37, 36, 36);
+}
+
+#sort-by-controls {
+  padding-bottom: 5px;
+}
+
+
+#sort-by-label {
+  padding-right: 10px;
+}
+
+#sort-by-query {
+  text-transform: capitalize;
+  background-color: rgb(37, 36, 36);
+}
+
+#desc-label {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+#asc-label {
+  padding-right: 5px;
 }
 
 #login-header {
