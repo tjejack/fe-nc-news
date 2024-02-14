@@ -29,13 +29,13 @@ export default function CommentCard({ comment }) {
       });
   }
 
-  function updateVote(num){
+  function updateVote(num) {
     setDisplayVotes((currentCount) => currentCount + num);
     setIsLikesError(false);
-    patchCommentVotes(comment.comment_id, num).catch((err)=>{
+    patchCommentVotes(comment.comment_id, num).catch((err) => {
       setIsLikesError(true);
       setDisplayVotes((currentCount) => currentCount - num);
-    })
+    });
   }
 
   useEffect(() => {
@@ -56,7 +56,11 @@ export default function CommentCard({ comment }) {
     <div className="comment-card-extra-height">
       <div className="comment-card" xs={6} md={6} lg={6}>
         <div className="comment-author-container">
-          <img className="comment-avatar" src={commentUser.avatar_url} alt={`avatar for ${commentUser.username}`}/>
+          <img
+            className="comment-avatar"
+            src={commentUser.avatar_url}
+            alt={`avatar for ${commentUser.username}`}
+          />
           <header className="comment-author">{commentUser.name}</header>
         </div>
         <p className="comment-published">{displayTime}</p>
@@ -67,12 +71,12 @@ export default function CommentCard({ comment }) {
         )}
         <p className="comment-votes">Votes: {displayVotes}</p>
         {isLikesError ? (
-            <div id="comment-likes-error-container" role="alert">
-              <p id="comment-likes-error-message">
+          <div id="comment-likes-error-container" role="alert">
+            <p id="comment-likes-error-message">
               Oops! Your vote could not be counted.
-              </p>
-            </div>
-          ) : null}
+            </p>
+          </div>
+        ) : null}
         {isError ? (
           <div id="delete-comment-error-container" role="alert">
             <p id="delete-comment-error-message">
@@ -82,20 +86,34 @@ export default function CommentCard({ comment }) {
         ) : null}
         {isLoading ? (
           <div id="deleting-comment-container" role="alert">
-            <p id="deleting-comment-message">
-              Deleting Comment...
-            </p>
+            <p id="deleting-comment-message">Deleting Comment...</p>
           </div>
         ) : null}
-        {commentUser.username === currentUser.username && currentUser.username !== 'anonymous' ? (
+        {commentUser.username === currentUser.username &&
+        currentUser.username !== "anonymous" ? (
           <button className="comment-delete-button" onClick={removeComment}>
             Delete Comment
           </button>
         ) : (
           <div className="comment-vote-buttons">
-            <button className="comment-like-button" value={1} onClick={()=>{updateVote(1)}}>Upvote</button>
-            <button 
-            className="comment-dislike-button" value={-1} onClick={()=>{updateVote(1)}}>Downvote</button>
+            <button
+              className="comment-like-button"
+              value={1}
+              onClick={() => {
+                updateVote(1);
+              }}
+            >
+              Upvote
+            </button>
+            <button
+              className="comment-dislike-button"
+              value={-1}
+              onClick={() => {
+                updateVote(-1);
+              }}
+            >
+              Downvote
+            </button>
           </div>
         )}
       </div>
